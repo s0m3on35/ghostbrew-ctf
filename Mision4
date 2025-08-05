@@ -1,0 +1,35 @@
+Misión 04 – Exfiltración de evidencia
+
+Objetivo: Extraer evidencia digital del sabotaje en curso sin activar alertas ni levantar sospechas.
+
+---
+
+Situación:
+
+Has obtenido acceso persistente al entorno de la destilería. Ahora debes recopilar evidencia técnica para justificar una intervención externa y exponer a Satori Systems.
+
+Los archivos sospechosos se encuentran en el sistema de registros del SCADA. Se han detectado documentos internos en formato PDF y archivos `.csv` con datos de telemetría anómalos.
+
+Tu misión es exfiltrar esos datos fuera de la red de forma encubierta.
+
+---
+
+Instrucciones:
+
+1. Ubica el directorio `/var/log/scada/` o `/opt/satori/`
+2. Localiza archivos de interés: `registro_temperaturas.csv`, `plan_mantenimiento.pdf`
+3. Comprime y cifra la evidencia en un archivo `.zip` con contraseña.
+4. Exfiltra el `.zip` usando uno de los siguientes métodos:
+   - DNS exfil (ej: `dnsxfil.py`)
+   - HTTP POST oculto (via `curl` o `flask`)
+   - Upload a servidor externo controlado
+
+5. Una vez enviado, crea un archivo `/tmp/exfiltracion_completa.txt`
+6. El `flag.txt` aparecerá automáticamente allí si se detecta tráfico de salida exitoso.
+
+---
+
+Herramientas sugeridas:
+
+- `zip`, `gpg`, `curl`, `dnsxfil.py`, `scp`, `nc`, `tcpdump`
+- Alternativamente puedes montar un pequeño listener externo (`Flask`, `nc -lvp 8080`)
