@@ -1,0 +1,35 @@
+Misión 03 – Persistencia en la infraestructura
+
+Objetivo: Establecer un acceso persistente en el sistema industrial sin ser detectado por los ingenieros.
+
+---
+
+Situación:
+
+Has logrado acceder al HMI y al PLC principal. Sin embargo, Satori Systems realiza auditorías frecuentes en los archivos de configuración. Tu acceso actual podría ser revocado con un simple reinicio.
+
+Necesitas dejar un mecanismo persistente que te permita reconectar al sistema incluso tras una limpieza parcial. La clave es hacerlo sin levantar sospechas.
+
+---
+
+Opciones de persistencia recomendadas:
+
+1. Inyectar un cronjob oculto que abra un puerto inverso cada 12 horas.
+2. Modificar el archivo de arranque del sistema (`rc.local`, `init.d`, `systemd`) para lanzar un implante.
+3. Insertar un pequeño payload en el propio HMI que envíe datos de forma pasiva a tu servidor (ej. `curl`, `wget`, `nc`).
+
+---
+
+Instrucciones:
+
+1. Explora el sistema operativo del HMI o del servidor SCADA.
+2. Identifica archivos de arranque o directorios modificables.
+3. Inyecta un script o conexión que se mantenga activa tras reinicio.
+4. Verifica que tu acceso persiste tras un "simulado reinicio".
+5. El `flag.txt` aparecerá en `/etc/ghostbrew/` si la persistencia es exitosa.
+
+---
+
+Herramientas sugeridas:
+
+- `crontab`, `systemctl`, `bash`, `netcat`, `pspy`, `ls -la /etc/`, `grep`
