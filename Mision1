@@ -1,0 +1,32 @@
+
+Misión 01 – Punto de Acceso Inicial
+
+Objetivo: Obtener acceso a la red WiFi del personal técnico de la Destilería San Fermín.
+
+---
+
+Situación:
+
+La destilería ha sido recientemente modernizada por una consultora externa. Varios técnicos del equipo de mantenimiento utilizan una red WiFi protegida para conectarse a los PLCs y al panel de control SCADA. Se sospecha que esta red permite acceso directo a la red OT (Operaciones Técnicas) sin segmentación adecuada.
+
+Inteligencia preliminar ha revelado la existencia de una red oculta con el SSID: `DSF-Tecnicos`
+También se han observado conexiones frecuentes desde un dispositivo móvil con nombre `jrodriguez`.
+
+Tu misión comienza aquí.
+
+---
+
+Instrucciones:
+
+1. Realiza una exploración de redes WiFi disponibles.
+2. Identifica la red `DSF-Tecnicos` y recolecta información (canal, señal, cifrado).
+3. Captura el handshake WPA si está disponible.
+4. Intenta descifrar la contraseña usando diccionario o técnicas sociales.
+5. Una vez obtenida, simula el acceso y localiza el archivo `flag.txt` en la red simulada.
+
+---
+
+Recursos:
+
+- Herramientas sugeridas: `airmon-ng`, `airodump-ng`, `aircrack-ng`
+- Diccionario recomendado: `rockyou.txt`
