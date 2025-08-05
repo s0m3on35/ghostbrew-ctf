@@ -1,0 +1,30 @@
+Misión 02 – Infiltración al panel SCADA
+
+Objetivo: Acceder al panel de control SCADA de la destilería y modificar un parámetro crítico de forma controlada.
+
+---
+
+Situación:
+
+Tras haber obtenido acceso a la red WiFi técnica, has logrado identificar el segmento industrial. Se ha detectado un PLC accesible mediante el puerto Modbus TCP (502) con dirección IP `192.168.10.25`.
+
+Los ingenieros utilizan un HMI web para visualizar y controlar la presión, temperatura y flujo del proceso de fermentación. El panel parece estar montado sobre un sistema embebido con credenciales débiles.
+
+Tu objetivo es localizar dicho panel, acceder a él y modificar un valor de presión simulado. No debes dañar el sistema, pero sí demostrar que puedes alterar parámetros clave.
+
+---
+
+Instrucciones:
+
+1. Realiza un escaneo interno de la red 192.168.10.0/24.
+2. Identifica el puerto 502 (Modbus) y extrae los registros disponibles.
+3. Localiza el panel HMI accesible vía HTTP/HTTPS.
+4. Fuerza las credenciales (usuario: admin, usuario1, técnico).
+5. Cambia el valor del registro de presión a `777`.
+6. Verifica el cambio y obtén el `flag.txt` mostrado en el panel.
+
+---
+
+Herramientas sugeridas:
+
+- `nmap`, `mbtget`, `mbtwrite`, `hydra`, `dirb`, `curl`, `Burp Suite`
